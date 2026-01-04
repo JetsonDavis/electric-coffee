@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import ReactPlayer from "react-player/vimeo";
+import { API_ENDPOINTS } from "./config";
 
 export default function VideoFirstPage() {
   const playerRef = useRef(null);
@@ -14,7 +15,7 @@ export default function VideoFirstPage() {
 
   const fetchVideos = async () => {
     try {
-      const response = await fetch('http://localhost:8005/api/videos');
+      const response = await fetch(API_ENDPOINTS.videos);
       const data = await response.json();
       setVideos(data);
       setLoading(false);

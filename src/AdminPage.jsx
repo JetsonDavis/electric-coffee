@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import ReactPlayer from "react-player/vimeo";
+import { API_ENDPOINTS } from "./config";
 
 export default function AdminPage() {
   const playerRef = useRef(null);
@@ -9,6 +10,8 @@ export default function AdminPage() {
   const [editingId, setEditingId] = useState(null);
   const [editForm, setEditForm] = useState({ title: "", artist: "", description: "" });
   const [loading, setLoading] = useState(true);
+  const [editingDescription, setEditingDescription] = useState(false);
+  const [descriptionText, setDescriptionText] = useState("Between the decade of greed and the birth of the World Wide Web, there was a moment when creativity and ideation converged on a burgeoning scene of independent coffee houses across America. New music, new ideas, new art blossomed as the last, short-lived new wave of American culture in the 20th century, and the last surge of expression before the electronic age. This television show, produced and presented entirely by volunteers in 1994, puts you there, in 1994 Los Angeles, in the middle of \"the scene that's on caffeine\"...");
 
   useEffect(() => {
     fetchVideos();
@@ -16,7 +19,7 @@ export default function AdminPage() {
 
   const fetchVideos = async () => {
     try {
-      const response = await fetch('http://localhost:8005/api/videos');
+      const response = await fetch(API_ENDPOINTS.videos);
       const data = await response.json();
       setVideos(data);
       setLoading(false);
@@ -37,7 +40,7 @@ export default function AdminPage() {
 
   const handleSave = async (id) => {
     try {
-      await fetch(`http://localhost:8005/api/videos/${id}`, {
+      await fetch(API_ENDPOINTS.updateVideo(id), {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -120,9 +123,45 @@ export default function AdminPage() {
         {/* Bottom Section - Video Details */}
         <div className="bg-gray-800 rounded-lg p-6 shadow-xl mb-8">
           <div className="text-white font-['Caveat'] text-2xl leading-relaxed text-center">
-            <p className="mb-6">
-              Between the decade of greed and the birth of the World Wide Web, there was a moment when creativity and ideation converged on a burgeoning scene of independent coffee houses across America. New music, new ideas, new art blossomed as the last, short-lived new wave of American culture in the 20th century, and the last surge of expression before the electronic age. This television show, produced and presented entirely by volunteers in 1994, puts you there, in 1994 Los Angeles, in the middle of "the scene that's on caffeine"...
-            </p>
+            {editingDescription ? (
+              <>
+                <textarea
+                  value={descriptionText}
+                  onChange={(e) => setDescriptionText(e.target.value)}
+                  className="w-full bg-gray-700 text-white font-['Caveat'] text-2xl leading-relaxed text-center px-4 py-3 rounded mb-4"
+                  rows="8"
+                />
+                <div className="flex gap-2 justify-center mb-6">
+                  <button
+                    onClick={() => setEditingDescription(false)}
+                    className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition-colors"
+                  >
+                    Save
+                  </button>
+                  <button
+                    onClick={() => {
+                      setDescriptionText("Between the decade of greed and the birth of the World Wide Web, there was a moment when creativity and ideation converged on a burgeoning scene of independent coffee houses across America. New music, new ideas, new art blossomed as the last, short-lived new wave of American culture in the 20th century, and the last surge of expression before the electronic age. This television show, produced and presented entirely by volunteers in 1994, puts you there, in 1994 Los Angeles, in the middle of \"the scene that's on caffeine\"...");
+                      setEditingDescription(false);
+                    }}
+                    className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded transition-colors"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                <p className="mb-6">
+                  {descriptionText}
+                </p>
+                <button
+                  onClick={() => setEditingDescription(true)}
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 text-sm rounded transition-colors mb-4"
+                >
+                  Edit Description
+                </button>
+              </>
+            )}
             <p className="text-3xl font-bold">
               Electric Coffee
             </p>
