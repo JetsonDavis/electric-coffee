@@ -24,8 +24,10 @@ dist-ssr
 *.sw?
 
 # Database and data
-server/videos.db
-server/data/
+# Note: server/data/videos.db is tracked in git as the initial database
+# Local changes to the database will be ignored
+server/data/*
+!server/data/videos.db
 data/
 
 # Docker

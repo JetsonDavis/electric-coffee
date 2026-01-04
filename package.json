@@ -11,7 +11,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "fetch-thumbnails": "node scripts/fetch-vimeo-thumbnails.js",
-    "update-db": "node scripts/update-database.js"
+    "update-db": "node scripts/update-database.js",
+    "setup-db": "node scripts/setup-database.js"
   },
   "dependencies": {
     "react": "^18.3.1",
