@@ -64,7 +64,7 @@ docker run -d \
 - **Image Name**: `electric_coffee`
 - **Ports**: 
   - 3005 (Frontend)
-  - 3001 (Backend API)
+  - 8005 (Backend API)
 - **Volumes**:
   - `/app/server/data` - SQLite database
   - `/app/public/thumbnails` - Video thumbnails

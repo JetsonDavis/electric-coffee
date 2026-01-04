@@ -62,7 +62,7 @@ echo ""
 echo "Starting new container..."
 docker run -d \
   -p 3005:3005 \
-  -p 3001:3001 \
+  -p 8005:8005 \
   -v $(pwd)/data:/app/server/data \
   -v $(pwd)/public/thumbnails:/app/public/thumbnails \
   --name ${CONTAINER_NAME} \
@@ -101,11 +101,14 @@ echo "================================================"
 echo "Application is running at:"
 echo "  Frontend: http://localhost:3005"
 echo "  Admin:    http://localhost:3005/admin"
-echo "  API:      http://localhost:3001"
+echo "  API:      http://localhost:8005"
 echo ""
 echo "Useful commands:"
-echo "  View logs:    docker logs -f ${CONTAINER_NAME}"
 echo "  Stop:         docker stop ${CONTAINER_NAME}"
 echo "  Restart:      docker restart ${CONTAINER_NAME}"
 echo "  Remove:       docker stop ${CONTAINER_NAME} && docker rm ${CONTAINER_NAME}"
 echo "================================================"
+echo ""
+echo "Tailing container logs (Ctrl+C to exit)..."
+echo ""
+docker logs -f ${CONTAINER_NAME}

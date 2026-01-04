@@ -16,7 +16,7 @@ export default function AdminPage() {
 
   const fetchVideos = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/videos');
+      const response = await fetch('http://localhost:8005/api/videos');
       const data = await response.json();
       setVideos(data);
       setLoading(false);
@@ -37,7 +37,7 @@ export default function AdminPage() {
 
   const handleSave = async (id) => {
     try {
-      await fetch(`http://localhost:3001/api/videos/${id}`, {
+      await fetch(`http://localhost:8005/api/videos/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

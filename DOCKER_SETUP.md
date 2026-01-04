@@ -7,7 +7,7 @@ The Electric Coffee application is fully dockerized with persistent storage for 
 ## Architecture
 
 - **Frontend**: React with Vite (port 3005)
-- **Backend**: Express API (port 3001)
+- **Backend**: Express API (port 8005)
 - **Database**: SQLite stored in external volume at `./data/videos.db`
 - **Thumbnails**: Stored in external volume at `./public/thumbnails`
 
@@ -20,7 +20,7 @@ docker build -t electric-coffee .
 # Run the container with volume mounts
 docker run -d \
   -p 3005:3005 \
-  -p 3001:3001 \
+  -p 8005:8005 \
   -v $(pwd)/data:/app/server/data \
   -v $(pwd)/public/thumbnails:/app/public/thumbnails \
   --name electric-coffee \
@@ -36,7 +36,7 @@ docker rm electric-coffee
 
 The application will be available at:
 - **Frontend**: http://localhost:3005
-- **Backend API**: http://localhost:3001
+- **Backend API**: http://localhost:8005
 
 ## Persistent Storage
 
@@ -89,7 +89,7 @@ rm -rf ./data
 # Restart (will create fresh database with default data)
 docker run -d \
   -p 3005:3005 \
-  -p 3001:3001 \
+  -p 8005:8005 \
   -v $(pwd)/data:/app/server/data \
   -v $(pwd)/public/thumbnails:/app/public/thumbnails \
   --name electric-coffee \
@@ -110,7 +110,7 @@ docker rm electric-coffee
 docker build --no-cache -t electric-coffee .
 docker run -d \
   -p 3005:3005 \
-  -p 3001:3001 \
+  -p 8005:8005 \
   -v $(pwd)/data:/app/server/data \
   -v $(pwd)/public/thumbnails:/app/public/thumbnails \
   --name electric-coffee \
@@ -126,12 +126,12 @@ chmod -R 755 ./data
 
 ### Port already in use
 
-If ports 3005 or 3001 are already in use, change the host ports:
+If ports 3005 or 8005 are already in use, change the host ports:
 
 ```bash
 docker run -d \
   -p 8080:3005 \
-  -p 8081:3001 \
+  -p 8081:8005 \
   -v $(pwd)/data:/app/server/data \
   -v $(pwd)/public/thumbnails:/app/public/thumbnails \
   --name electric-coffee \

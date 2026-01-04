@@ -8,7 +8,7 @@ This guide covers deploying the Electric Coffee application to a server using Do
 
 1. **Docker installed** on the server
 2. **Internet connection** to pull from Docker Hub
-3. **Ports available**: 3005 (frontend) and 3001 (backend)
+3. **Ports available**: 3005 (frontend) and 8005 (backend)
 
 ## Deployment Script
 
@@ -61,7 +61,7 @@ mkdir -p ./public/thumbnails
 # Run the container
 docker run -d \
   -p 3005:3005 \
-  -p 3001:3001 \
+  -p 8005:8005 \
   -v $(pwd)/data:/app/server/data \
   -v $(pwd)/public/thumbnails:/app/public/thumbnails \
   --name electric-coffee \
@@ -207,12 +207,12 @@ docker logs electric-coffee
 
 # Check if ports are in use
 sudo lsof -i :3005
-sudo lsof -i :3001
+sudo lsof -i :8005
 
 # Try running with different ports
 docker run -d \
   -p 8080:3005 \
-  -p 8081:3001 \
+  -p 8081:8005 \
   -v $(pwd)/data:/app/server/data \
   --name electric-coffee \
   jetsondavis/electric_coffee:latest
@@ -241,7 +241,7 @@ docker network inspect bridge
 
 ## Security Considerations
 
-1. **Firewall**: Only expose necessary ports (3005, 3001)
+1. **Firewall**: Only expose necessary ports (3005, 8005)
 2. **SSL/TLS**: Use a reverse proxy (nginx, Caddy) for HTTPS
 3. **Updates**: Regularly update the Docker image
 4. **Backups**: Automate database backups
@@ -265,7 +265,7 @@ server {
     }
 
     location /api {
-        proxy_pass http://localhost:3001;
+        proxy_pass http://localhost:8005;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
     }

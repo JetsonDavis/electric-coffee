@@ -7,7 +7,7 @@ The application now includes an admin page where you can edit video titles, arti
 ## Architecture
 
 - **Frontend**: React with Vite (runs on port 5173)
-- **Backend**: Express API server (runs on port 3001)
+- **Backend**: Express API server (runs on port 8005)
 - **Database**: SQLite (`server/videos.db`)
 
 ## Setup Instructions

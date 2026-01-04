@@ -14,7 +14,7 @@ export default function VideoFirstPage() {
 
   const fetchVideos = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/videos');
+      const response = await fetch('http://localhost:8005/api/videos');
       const data = await response.json();
       setVideos(data);
       setLoading(false);

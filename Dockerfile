@@ -17,8 +17,8 @@ RUN npm run build
 # Create data directory for SQLite database
 RUN mkdir -p /app/server/data
 
-# Expose ports (frontend on 3005, backend on 3001)
-EXPOSE 3005 3001
+# Expose ports (frontend on 3005, backend on 8005)
+EXPOSE 3005 8005
 
 # Start both servers
 CMD sh -c "node server/index.js & npm run preview -- --host 0.0.0.0 --port 3005 && wait"

@@ -64,7 +64,7 @@ fi
 echo ""
 echo "To pull and run:"
 echo "docker pull ${DOCKER_USERNAME}/${IMAGE_NAME}:${VERSION}"
-echo "docker run -d -p 3005:3005 -p 3001:3001 \\"
+echo "docker run -d -p 3005:3005 -p 8005:8005 \\"
 echo "  -v \$(pwd)/data:/app/server/data \\"
 echo "  -v \$(pwd)/public/thumbnails:/app/public/thumbnails \\"
 echo "  --name electric-coffee \\"

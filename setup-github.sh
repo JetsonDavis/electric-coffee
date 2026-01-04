@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Setup GitHub repository and push code
+# This script helps create a GitHub repository and push your code
+
+echo "================================================"
+echo "GitHub Repository Setup"
+echo "================================================"
+echo ""
+echo "To create a GitHub repository and push your code:"
+echo ""
+echo "1. Go to https://github.com/new"
+echo "2. Repository name: electric-coffee"
+echo "3. Description: Electric Coffee - 1990s LA coffee house scene video archive"
+echo "4. Choose Public or Private"
+echo "5. Do NOT initialize with README, .gitignore, or license"
+echo "6. Click 'Create repository'"
+echo ""
+echo "Then run these commands:"
+echo ""
+echo "git remote add origin https://github.com/YOUR_USERNAME/electric-coffee.git"
+echo "git branch -M main"
+echo "git push -u origin main"
+echo ""
+echo "================================================"
+echo ""
+echo "Or use GitHub CLI (if installed):"
+echo ""
+echo "gh repo create electric-coffee --public --source=. --remote=origin --push"
+echo ""
+echo "================================================"
