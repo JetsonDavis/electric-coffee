@@ -1,0 +1,70 @@
+[
+  {
+    "video_id": 1,
+    "vimeo_id": "1151296094",
+    "url": "https://vimeo.com/1151296094",
+    "thumbnail_url": "https://i.vimeocdn.com/video/2102442993-a47ef4d61fd39d886805853a7728551df125b9d0e15e6c80bdad632702460e72-d_295x166?region=us",
+    "thumbnail_file": "video-1-1151296094.jpg",
+    "title": "E.C. Episode 1 - New Media version",
+    "dimensions": "295x173"
+  },
+  {
+    "video_id": 2,
+    "vimeo_id": "1151296083",
+    "url": "https://vimeo.com/1151296083",
+    "thumbnail_url": "https://i.vimeocdn.com/video/2102442981-4ae078cc3c3251622510a44fa71add57ecf1de8f25f00f889a7217484f660c88-d_295x166?region=us",
+    "thumbnail_file": "video-2-1151296083.jpg",
+    "title": "E.C. Episode 2 - New Media version",
+    "dimensions": "295x172"
+  },
+  {
+    "video_id": 3,
+    "vimeo_id": "1151301093",
+    "url": "https://vimeo.com/1151301093",
+    "thumbnail_url": "https://i.vimeocdn.com/video/2102453340-3c9606a222172bd850961f6c65b3837a43cf64ddd204e1d5d785d8f37c860aa1-d_295x166?region=us",
+    "thumbnail_file": "video-3-1151301093.jpg",
+    "title": "E.C. Episode 3 - New Media version",
+    "dimensions": "295x172"
+  },
+  {
+    "video_id": 4,
+    "vimeo_id": "1151301070",
+    "url": "https://vimeo.com/1151301070",
+    "thumbnail_url": "https://i.vimeocdn.com/video/2102453329-8823c68293b3da9c55ebda965cee346138e037fd00832628f5e238ff99a02628-d_295x166?region=us",
+    "thumbnail_file": "video-4-1151301070.jpg",
+    "title": "E.C. Episode 4 - New Media version",
+    "dimensions": "295x171"
+  },
+  {
+    "video_id": 7,
+    "vimeo_id": "1151305470",
+    "url": "https://vimeo.com/1151305470",
+    "thumbnail_url": "https://i.vimeocdn.com/video/2102460143-600a3faa7d9f44bbd8a10fdfd0132ee82ddded5833eb747dabf1c82d6c3ddaab-d_295x166?region=us",
+    "thumbnail_file": "video-7-1151305470.jpg",
+    "title": "E.C. Episode 7 - New Media version",
+    "dimensions": "295x170"
+  },
+  {
+    "video_id": 8,
+    "url": "https://vimeo.com/1151305523",
+    "error": "Failed to fetch thumbnail for https://vimeo.com/1151305523: HTTP 404: 404 Not Found"
+  },
+  {
+    "video_id": 11,
+    "vimeo_id": "1151296070",
+    "url": "https://vimeo.com/1151296070",
+    "thumbnail_url": "https://i.vimeocdn.com/video/2102442956-cc11c4d2fed6265a496ee0eb1bf400fb4aa8a626831fb1da41143e819e4f5a16-d_295x166?region=us",
+    "thumbnail_file": "video-11-1151296070.jpg",
+    "title": "E.C. Episode 11- New Media version",
+    "dimensions": "295x170"
+  },
+  {
+    "video_id": 12,
+    "vimeo_id": "1151296062",
+    "url": "https://vimeo.com/1151296062",
+    "thumbnail_url": "https://i.vimeocdn.com/video/2102442922-e93781dd2bc4e95ec4e313fb25be48cbde3dcddd0013265604924fabb16e3653-d_295x166?region=us",
+    "thumbnail_file": "video-12-1151296062.jpg",
+    "title": "E.C. Episode 12- New Media version",
+    "dimensions": "295x170"
+  }
+]
